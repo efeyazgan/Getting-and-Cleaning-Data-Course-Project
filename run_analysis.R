@@ -76,4 +76,4 @@ merged_data = rbind(data_train,data_test)
 merged_data %>% write.table("merged_data.txt")   
         
 # create a second, independent tidy data set with the average of each variable for each activity and each subject.
-merged_data %>% group_by(subject,activity_number,activity_label) %>% summarize_each(funs(mean)) %>% write.table("means.txt")         
+merged_data %>% group_by(subject,activity_number,activity_label) %>% summarize_each(funs(mean)) %>% write.table("means.txt",row.name=FALSE)         
